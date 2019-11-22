@@ -22,12 +22,11 @@ app.use(
   helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self'"],
-      scriptSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'"],
       styleSrc: ["'self'"]
     }
   })
 );
-
 //Index page (static HTML)
 app.route('/').get(function(req, res) {
   res.sendFile(process.cwd() + '/views/index.html');

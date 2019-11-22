@@ -81,6 +81,7 @@ suite('Functional Tests', function() {
         .query({ stock: ['goog', 'aapl'] })
         .end(function(err, res) {
           assert.equal(res.status, 200);
+          assert.isArray(res.body.stockData);
           assert.property(res.body.stockData[0], 'stock');
           assert.property(res.body.stockData[0], 'price');
           assert.property(res.body.stockData[0], 'rel_likes');
@@ -104,7 +105,7 @@ suite('Functional Tests', function() {
         .query({ stock: ['goog', 'aapl'], like: 'true' })
         .end(function(err, res) {
           assert.equal(res.status, 200);
-          assert.equal(res.status, 200);
+          assert.isArray(res.body.stockData);
           assert.property(res.body.stockData[0], 'stock');
           assert.property(res.body.stockData[0], 'price');
           assert.property(res.body.stockData[0], 'rel_likes');

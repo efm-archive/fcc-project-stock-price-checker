@@ -16,7 +16,7 @@ chai.use(chaiHttp);
 suite('Functional Tests', function() {
   suite('GET /api/stock-prices => stockData object', function() {
     test('1 stock', function(done) {
-      this.timeout(6000);
+      this.timeout(12000);
       chai
         .request(server)
         .get('/api/stock-prices')
@@ -35,7 +35,7 @@ suite('Functional Tests', function() {
 
     let likeCount = { '1stock': {}, '2stock': {} };
     test('1 stock with like', function(done) {
-      this.timeout(6000);
+      this.timeout(12000);
       chai
         .request(server)
         .get('/api/stock-prices')
@@ -55,7 +55,7 @@ suite('Functional Tests', function() {
     });
 
     test('1 stock with like again (ensure likes arent double counted)', function(done) {
-      this.timeout(6000);
+      this.timeout(12000);
       chai
         .request(server)
         .get('/api/stock-prices')
@@ -74,7 +74,7 @@ suite('Functional Tests', function() {
     });
 
     test('2 stocks', function(done) {
-      this.timeout(6000);
+      this.timeout(12000);
       chai
         .request(server)
         .get('/api/stock-prices')
@@ -98,7 +98,7 @@ suite('Functional Tests', function() {
     });
 
     test('2 stocks with like', function(done) {
-      this.timeout(6000);
+      this.timeout(12000);
       chai
         .request(server)
         .get('/api/stock-prices')
